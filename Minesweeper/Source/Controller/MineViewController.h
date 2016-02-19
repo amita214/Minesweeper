@@ -6,9 +6,8 @@
 //  Copyright © 2016 Amita Pai. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface MineViewController : UIViewController
 
 
 @end

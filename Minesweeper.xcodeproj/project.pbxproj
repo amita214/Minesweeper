@@ -9,23 +9,32 @@
 /* Begin PBXBuildFile section */
 		763CF5871C75481400B012AB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 763CF5861C75481400B012AB /* main.m */; };
 		763CF58A1C75481400B012AB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 763CF5891C75481400B012AB /* AppDelegate.m */; };
-		763CF58D1C75481400B012AB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 763CF58C1C75481400B012AB /* ViewController.m */; };
 		763CF5901C75481400B012AB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 763CF58E1C75481400B012AB /* Main.storyboard */; };
 		763CF5921C75481400B012AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 763CF5911C75481400B012AB /* Assets.xcassets */; };
 		763CF5951C75481400B012AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 763CF5931C75481400B012AB /* LaunchScreen.storyboard */; };
+		763CF5A11C75488C00B012AB /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 763CF5A01C75488C00B012AB /* MineViewController.m */; };
+		763CF5A71C7588D900B012AB /* MineTileCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 763CF5A61C7588D900B012AB /* MineTileCollectionViewCell.m */; };
+		763CF5A91C7589DC00B012AB /* Defines.m in Sources */ = {isa = PBXBuildFile; fileRef = 763CF5A81C7589DC00B012AB /* Defines.m */; };
+		763CF5AB1C766AE100B012AB /* bomb.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 763CF5AA1C766AE100B012AB /* bomb.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		763CF5821C75481400B012AB /* Minesweeper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Minesweeper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		763CF5861C75481400B012AB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		763CF5881C75481400B012AB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		763CF5891C75481400B012AB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		763CF58B1C75481400B012AB /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		763CF58C1C75481400B012AB /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		763CF5881C75481400B012AB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Source/AppDelegate.h; sourceTree = "<group>"; };
+		763CF5891C75481400B012AB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = Source/AppDelegate.m; sourceTree = "<group>"; };
 		763CF58F1C75481400B012AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		763CF5911C75481400B012AB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		763CF5941C75481400B012AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		763CF5961C75481400B012AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		763CF59F1C75488C00B012AB /* MineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MineViewController.h; path = Source/Controller/MineViewController.h; sourceTree = "<group>"; };
+		763CF5A01C75488C00B012AB /* MineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MineViewController.m; path = Source/Controller/MineViewController.m; sourceTree = "<group>"; };
+		763CF5A21C75867800B012AB /* Defines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Defines.h; path = Source/Defines.h; sourceTree = "<group>"; };
+		763CF5A41C7587CF00B012AB /* Minesweeper-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Minesweeper-Prefix.pch"; sourceTree = "<group>"; };
+		763CF5A51C7588D900B012AB /* MineTileCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MineTileCollectionViewCell.h; path = Source/View/MineTileCollectionViewCell.h; sourceTree = "<group>"; };
+		763CF5A61C7588D900B012AB /* MineTileCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MineTileCollectionViewCell.m; path = Source/View/MineTileCollectionViewCell.m; sourceTree = "<group>"; };
+		763CF5A81C7589DC00B012AB /* Defines.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Defines.m; path = Source/Defines.m; sourceTree = "<group>"; };
+		763CF5AA1C766AE100B012AB /* bomb.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bomb.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,10 +67,13 @@
 		763CF5841C75481400B012AB /* Minesweeper */ = {
 			isa = PBXGroup;
 			children = (
+				763CF59E1C75487F00B012AB /* Controller */,
+				763CF59D1C75487A00B012AB /* View */,
+				763CF59C1C75487500B012AB /* Model */,
 				763CF5881C75481400B012AB /* AppDelegate.h */,
 				763CF5891C75481400B012AB /* AppDelegate.m */,
-				763CF58B1C75481400B012AB /* ViewController.h */,
-				763CF58C1C75481400B012AB /* ViewController.m */,
+				763CF5A21C75867800B012AB /* Defines.h */,
+				763CF5A81C7589DC00B012AB /* Defines.m */,
 				763CF58E1C75481400B012AB /* Main.storyboard */,
 				763CF5911C75481400B012AB /* Assets.xcassets */,
 				763CF5931C75481400B012AB /* LaunchScreen.storyboard */,
@@ -74,9 +86,36 @@
 		763CF5851C75481400B012AB /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				763CF5AA1C766AE100B012AB /* bomb.mp3 */,
 				763CF5861C75481400B012AB /* main.m */,
+				763CF5A41C7587CF00B012AB /* Minesweeper-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		763CF59C1C75487500B012AB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		763CF59D1C75487A00B012AB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				763CF5A51C7588D900B012AB /* MineTileCollectionViewCell.h */,
+				763CF5A61C7588D900B012AB /* MineTileCollectionViewCell.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		763CF59E1C75487F00B012AB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				763CF59F1C75488C00B012AB /* MineViewController.h */,
+				763CF5A01C75488C00B012AB /* MineViewController.m */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,6 +176,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				763CF5AB1C766AE100B012AB /* bomb.mp3 in Resources */,
 				763CF5951C75481400B012AB /* LaunchScreen.storyboard in Resources */,
 				763CF5921C75481400B012AB /* Assets.xcassets in Resources */,
 				763CF5901C75481400B012AB /* Main.storyboard in Resources */,
@@ -150,9 +190,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				763CF58D1C75481400B012AB /* ViewController.m in Sources */,
+				763CF5A11C75488C00B012AB /* MineViewController.m in Sources */,
+				763CF5A71C7588D900B012AB /* MineTileCollectionViewCell.m in Sources */,
 				763CF58A1C75481400B012AB /* AppDelegate.m in Sources */,
 				763CF5871C75481400B012AB /* main.m in Sources */,
+				763CF5A91C7589DC00B012AB /* Defines.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,6 +306,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/Minesweeper/Minesweeper-Prefix.pch";
 				INFOPLIST_FILE = Minesweeper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.home.Minesweeper;
@@ -275,6 +318,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/Minesweeper/Minesweeper-Prefix.pch";
 				INFOPLIST_FILE = Minesweeper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.home.Minesweeper;

@@ -1,0 +1,14 @@
+//
+//  Minesweeper-Prefix.pch
+//  Minesweeper
+//
+//  Created by Amita Pai on 2/17/16.
+//  Copyright © 2016 Amita Pai. All rights reserved.
+//
+
+#ifndef Minesweeper_Prefix_pch
+#define Minesweeper_Prefix_pch
+
+#import "Defines.h"
+
+#endif /* Minesweeper_Prefix_pch */
