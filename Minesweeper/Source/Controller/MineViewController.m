@@ -23,6 +23,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *referenceBackgroundImageView;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (weak, nonatomic) IBOutlet UILabel *timerLabel;
+@property (weak, nonatomic) IBOutlet UIView *carpetView; // only to diable taps once game over - won/lost
 
 @property (strong) AVAudioPlayer *audioPlayer;
 
@@ -120,6 +121,7 @@
 }
 
 - (void)finalResult {
+    [self stopTimer];
     if (_isFailed) {
         NSString *soundFilePath = [[NSBundle mainBundle] pathForResource:@"bomb" ofType:@"mp3"];
         NSURL *soundFileURL = [NSURL fileURLWithPath:soundFilePath];
@@ -141,6 +143,7 @@
     } else {
         [self showAlertWithMessage:@"Congratulations!!"];
     }
+    [self.carpetView.superview bringSubviewToFront:self.carpetView];
 }
 
 #pragma  mark - Mine Calculations
@@ -150,6 +153,8 @@
     _isFailed = NO;
     _timerSeconds = 0;
 
+    [self.carpetView.superview sendSubviewToBack:self.carpetView];
+    
     if (!_hiddenMinePositions) {
         _hiddenMinePositions = [NSMutableArray arrayWithCapacity:MAX_HIDDEN_MINES];
     } else {

@@ -131,16 +131,24 @@
                                             <outlet property="delegate" destination="BYZ-38-t0r" id="iNA-Tx-kGs"/>
                                         </connections>
                                     </collectionView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7gs-Qm-cGN">
+                                        <rect key="frame" x="42" y="10" width="516" height="516"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" red="0.50196081400000003" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="GGf-SK-RSJ" firstAttribute="top" secondItem="4Ji-eE-RLK" secondAttribute="top" priority="999" constant="10" id="6na-G8-W4A"/>
                                     <constraint firstItem="GGf-SK-RSJ" firstAttribute="leading" secondItem="4Ji-eE-RLK" secondAttribute="leading" priority="999" constant="10" id="FL9-CH-sNE"/>
+                                    <constraint firstItem="7gs-Qm-cGN" firstAttribute="leading" secondItem="aXz-1W-8N9" secondAttribute="leading" id="JHj-5H-ELX"/>
+                                    <constraint firstItem="7gs-Qm-cGN" firstAttribute="top" secondItem="aXz-1W-8N9" secondAttribute="top" id="MDI-GS-reD"/>
+                                    <constraint firstItem="7gs-Qm-cGN" firstAttribute="trailing" secondItem="aXz-1W-8N9" secondAttribute="trailing" id="VxF-Ph-s91"/>
                                     <constraint firstItem="aXz-1W-8N9" firstAttribute="bottom" secondItem="GGf-SK-RSJ" secondAttribute="bottom" id="lZ7-VD-Fd1"/>
                                     <constraint firstItem="aXz-1W-8N9" firstAttribute="top" secondItem="GGf-SK-RSJ" secondAttribute="top" id="oV8-vR-JRS"/>
                                     <constraint firstItem="aXz-1W-8N9" firstAttribute="leading" secondItem="GGf-SK-RSJ" secondAttribute="leading" id="t1B-Ss-DNw"/>
                                     <constraint firstItem="GGf-SK-RSJ" firstAttribute="centerX" secondItem="4Ji-eE-RLK" secondAttribute="centerX" id="upm-y7-7KE"/>
                                     <constraint firstItem="aXz-1W-8N9" firstAttribute="trailing" secondItem="GGf-SK-RSJ" secondAttribute="trailing" id="vMt-9D-Iuj"/>
+                                    <constraint firstItem="7gs-Qm-cGN" firstAttribute="bottom" secondItem="aXz-1W-8N9" secondAttribute="bottom" id="ymE-0V-bEA"/>
                                     <constraint firstItem="GGf-SK-RSJ" firstAttribute="centerY" secondItem="4Ji-eE-RLK" secondAttribute="centerY" id="zdR-2S-GKG"/>
                                 </constraints>
                             </view>
@@ -157,6 +165,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="carpetView" destination="7gs-Qm-cGN" id="wwn-sI-7fy"/>
                         <outlet property="collectionView" destination="aXz-1W-8N9" id="YVs-7i-0mZ"/>
                         <outlet property="referenceBackgroundImageView" destination="GGf-SK-RSJ" id="FrI-ja-7On"/>
                         <outlet property="timerLabel" destination="B92-ol-Lvz" id="p3i-gx-qib"/>
