@@ -26,6 +26,7 @@
 
 @property (nonatomic, weak) id <MineFieldDelegate> mineFieldDelegate;
 
+- (void)initialSetup;
 - (void)updateTile;
 
 @end

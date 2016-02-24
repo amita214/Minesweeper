@@ -34,7 +34,7 @@ typedef struct Grid {
 
 #pragma mark - enum definitions
 typedef enum {
-    INITIAL,
+    INITIAL, //un-flagged
     FLAGGED,
     TAPPED
 } MineTileState;

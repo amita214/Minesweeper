@@ -16,13 +16,13 @@
 @property (weak, nonatomic) IBOutlet UIImageView *stateIndicatorImageView;
 @property (weak, nonatomic) IBOutlet UILabel *mineCountLabel;
 
+@property (strong, nonatomic) UITapGestureRecognizer *doubleTapGestureRecognizer;
 @end
 
 @implementation MineTileCollectionViewCell
 
 - (instancetype)initWithCoder:(NSCoder *)aDecoder {
     if (self = [super initWithCoder:aDecoder]) {
-        [self initialSetup];
         
         [[NSNotificationCenter defaultCenter] addObserver:self
                                                  selector:@selector(initialSetup)
@@ -32,6 +32,12 @@
                                                  selector:@selector(revealHiddenMine)
                                                      name:kShowAllHiddenMinesNotification
                                                    object:nil];
+        
+        _doubleTapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(doubleTapped)];
+        _doubleTapGestureRecognizer.numberOfTapsRequired = 2;
+        _doubleTapGestureRecognizer.numberOfTouchesRequired = 1;
+        _doubleTapGestureRecognizer.delaysTouchesBegan = YES;
+        [self addGestureRecognizer:_doubleTapGestureRecognizer];
     }
     return  self;
 }
@@ -79,7 +85,7 @@
         return;
     }
     _tapped = tapped;
-    _state = TAPPED;
+    self.state = tapped ? TAPPED : INITIAL;
 
     if (self.hidesMine) {
         [self revealHiddenMine];
@@ -91,12 +97,15 @@
 
 - (void)setFlagged:(BOOL)flagged {
     _flagged = flagged;
-    _state = FLAGGED;
-    _enabled = NO;
+    self.state = flagged ? FLAGGED : INITIAL;
+
+    _enabled = !flagged;
+}
+
+- (void)setState:(MineTileState)state {
+    _state = state;
     
-    self.mineCountLabel.hidden = YES;
-    self.stateIndicatorImageView.hidden = NO;
-    [self.stateIndicatorImageView setImage:[UIImage imageNamed:@"Flag"]];
+    [self updateTile];
 }
 
 - (void)updateTile {
@@ -113,9 +122,12 @@
         case INITIAL:
         default:
             self.stateIndicatorImageView.hidden = NO;
-            self.stateIndicatorImageView.image = [UIImage imageNamed:@"Tile"];
+            [self.stateIndicatorImageView setImage:[UIImage imageNamed:@"Tile"]];
             break;
     }
 }
 
+- (void)doubleTapped {
+    self.flagged = !self.flagged;
+}
 @end

@@ -260,6 +260,7 @@
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     MineTileCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kMineTileReuseIdentifier forIndexPath:indexPath];
+    [cell initialSetup];
     cell.indexPosition = indexPath.row;
     cell.mineFieldDelegate = self;
     return cell;
