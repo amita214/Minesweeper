@@ -81,6 +81,8 @@
 }
 
 - (IBAction)validateMineField:(UIButton *)sender {
+    [self stopTimer];
+    
     if (_revealedTileCount < GRID_SIZE) {
         _isFailed = !(self.revealedTileCount == MAX_HIDDEN_MINES);
         [self finalResult];
@@ -88,6 +90,7 @@
 }
 
 - (void)gameOver {
+    [self stopTimer];
     _isFailed = YES;
     [self finalResult];
 }
@@ -278,10 +281,11 @@
 #pragma mark - Timer
 - (void)startTimer {
     _updateTimer = [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(updateTimer) userInfo:nil repeats:true];
+    
+    self.timerLabel.text = [NSString stringWithFormat:@"00:00:00"];
 }
 
 - (void)stopTimer {
-    self.timerLabel.text = [NSString stringWithFormat:@"00:00:00"];
     
     [_updateTimer invalidate];
     _updateTimer = nil;
