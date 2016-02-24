@@ -15,10 +15,14 @@
     NSMutableArray *_hiddenMinePositions;
     
     BOOL _isFailed;
+    
+    NSTimer *_updateTimer;
+    NSUInteger _timerSeconds;
 }
 
 @property (weak, nonatomic) IBOutlet UIImageView *referenceBackgroundImageView;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+@property (weak, nonatomic) IBOutlet UILabel *timerLabel;
 
 @property (strong) AVAudioPlayer *audioPlayer;
 
@@ -67,6 +71,7 @@
 
 #pragma mark - IB Outlets
 - (IBAction)resetMineField:(UIButton *)sender {
+    [self stopTimer];
     if (_revealedTileCount < GRID_SIZE) {
         [[NSNotificationCenter defaultCenter] postNotificationName:kResetMineFieldNotification
                                                             object:nil];
@@ -140,6 +145,7 @@
     _revealedTileCount = GRID_SIZE;
     _validationCount = GRID_SIZE;
     _isFailed = NO;
+    _timerSeconds = 0;
 
     if (!_hiddenMinePositions) {
         _hiddenMinePositions = [NSMutableArray arrayWithCapacity:MAX_HIDDEN_MINES];
@@ -148,6 +154,7 @@
     }
     
     [self randomlyChoseMinePositions];
+    [self startTimer];
 }
 
 - (void)randomlyChoseMinePositions {
@@ -266,6 +273,27 @@
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     MineTileCollectionViewCell *cell = (MineTileCollectionViewCell *)[self.collectionView cellForItemAtIndexPath:indexPath];
     [self cascadeTapFromCell:cell atPosition:(int)indexPath.row];
+}
+
+#pragma mark - Timer
+- (void)startTimer {
+    _updateTimer = [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(updateTimer) userInfo:nil repeats:true];
+}
+
+- (void)stopTimer {
+    self.timerLabel.text = [NSString stringWithFormat:@"00:00:00"];
+    
+    [_updateTimer invalidate];
+    _updateTimer = nil;
+}
+
+- (void)updateTimer {
+    _timerSeconds++;
+    NSUInteger hours = _timerSeconds / 3600;
+    NSUInteger remainder = _timerSeconds % 3600;
+    NSUInteger minutes = remainder / 60;
+    remainder %= 60;
+    self.timerLabel.text = [NSString stringWithFormat:@"%02ld:%02ld:%02ld", hours, minutes, remainder];
 }
 
 @end
